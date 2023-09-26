@@ -2,10 +2,13 @@
 
 ## Purpose
 
-A project that delves into the basics of time series machine learning applications, and an opportunity to implement clean code and software engineering practices.
+This project is designed to delve into the basics of time series machine learning applications, and an opportunity to implement clean code and software engineering practices in complete project.
 
 ## Project Description
 
+Kaggle hosts a variety of machine learning problems that are designed as competitions to be solved by a large community. However, some competitions are designed to instead help introduce programmers to concepts new and old within the broad field. One such competition is the "Store Sales Time Series Forecasting Challenge", a competition with the goal of teaching programmers to use time series data to create machine learning models that predict future data, bundled with a real world application. The scope of this project is to showcase my research into the data type of time series, and how to solve machine learning problems within that type while using modern clean code and software development practices.
+
+As such, this project will have a section with many notebooks that go over various experiments with the problem, as well as a software package that can be deployed to computers seamlessly.
 
 ## Index
 
@@ -17,6 +20,7 @@ A project that delves into the basics of time series machine learning applicatio
 
 ## Dependencies
 
+All dependencies that were used by the owner are captured within the requirements.txt file, which is handled within the Installation section. However, it is important to note that they used VSCode as an IDE, and thus used the Windows OS and Powershell/VSCode terminal to perform the following operations.
 
 ## Installation
 
@@ -42,6 +46,7 @@ A project that delves into the basics of time series machine learning applicatio
 
 ## Usage
 
+Currently there is no usage, other than to view the research work into time series. Be on the lookout for a deployable package update!
 
 ## Troubleshooting
 
@@ -53,4 +58,4 @@ For any issues you may have, please feel free to email me at `jakenorbie@gmail.c
 
 ## Licensing
 
-Jake Norbie
+Jake Norbie, Norbie LLC
