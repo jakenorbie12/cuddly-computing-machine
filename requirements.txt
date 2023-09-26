@@ -1,3 +1,10 @@
+ipykernel
 kaggle
-torch
-unzip
+numpy
+pandas
+matplotlib
+seaborn[stats]
+scikit-learn
+scipy
+statsmodels
+xgboost

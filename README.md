@@ -14,9 +14,10 @@ As such, this project will have a section with many notebooks that go over vario
 
 1. Dependencies
 2. Installation
-3. Usage of Files
-4. Troubleshooting
-5. Licensing
+3. Research Usage
+4. Software Usage
+5. Troubleshooting
+6. Licensing
 
 ## Dependencies
 
@@ -44,7 +45,11 @@ All dependencies that were used by the owner are captured within the requirement
 5) Unzip the folder. Using powershell the command is:
 ```Expand-Archive ./data/store-sales-time-series-forecasting.zip -DestinationPath ./data```
 
-## Usage
+## Research
+
+Firstly, the research uses a common format of Jupyter Notebooks. Since this was used in VSCode, you will need to go to the Command Palette (Ctrl + Shift + P) and create a python environment. This project uses a venv and uses the requirements.txt file to import all necessary imports.
+
+## Software
 
 Currently there is no usage, other than to view the research work into time series. Be on the lookout for a deployable package update!
 
