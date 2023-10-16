@@ -40,10 +40,10 @@ All dependencies that were used by the owner are captured within the requirement
 3) Move the file into the folder of C://Users/*user*/.kaggle
 
 4) Use this command to download the dataset
-```kaggle competitions download -c store-sales-time-series-forecasting -p ./data```
+```kaggle competitions download -c store-sales-time-series-forecasting -p ./data/original```
 
 5) Unzip the folder. Using powershell the command is:
-```Expand-Archive ./data/store-sales-time-series-forecasting.zip -DestinationPath ./data```
+```Expand-Archive ./data/original/store-sales-time-series-forecasting.zip -DestinationPath ./data/original```
 
 ## Research
 
