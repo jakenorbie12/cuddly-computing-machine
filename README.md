@@ -2,13 +2,15 @@
 
 ## Purpose
 
-This project is designed to delve into the basics of time series machine learning applications, and an opportunity to implement clean code and software engineering practices in complete project.
+This project is designed to serve three main purposes:
+
+1. Showcase the basics of feature generation and extraction within the dataset archetype of time series
+2. Create a framework for creating, training, and evaluating models using base or featured time series dataset from Kaggle Store Sales Time Series Forecasting
+3. Utilize clean code and software engineering practices to enable ease of use and editing
 
 ## Project Description
 
 Kaggle hosts a variety of machine learning problems that are designed as competitions to be solved by a large community. However, some competitions are designed to instead help introduce programmers to concepts new and old within the broad field. One such competition is the "Store Sales Time Series Forecasting Challenge", a competition with the goal of teaching programmers to use time series data to create machine learning models that predict future data, bundled with a real world application. The scope of this project is to showcase my research into the data type of time series, and how to solve machine learning problems within that type while using modern clean code and software development practices.
-
-As such, this project will have a section with many notebooks that go over various experiments with the problem, as well as a software package that can be deployed to computers seamlessly.
 
 ## Index
 
@@ -21,7 +23,7 @@ As such, this project will have a section with many notebooks that go over vario
 
 ## Dependencies
 
-All dependencies that were used by the owner are captured within the requirements.txt file, which is handled within the Installation section. However, it is important to note that they used VSCode as an IDE, and thus used the Windows OS and Powershell/VSCode terminal to perform the following operations.
+All dependencies that were used by the owner are captured within the requirements.txt file, which is handled within the Installation section. However, it is important to note that they used VSCode as the IDE, and thus used the Windows OS and Powershell/VSCode terminal to perform the following operations.
 
 ## Installation
 
@@ -55,12 +57,8 @@ Currently there is no usage, other than to view the research work into time seri
 
 ## Troubleshooting
 
-1) Make sure the config folders all point to the correct files.
-
-2) Make sure the data is properly formatted.
-
 For any issues you may have, please feel free to email me at `jakenorbie@gmail.com`.
 
 ## Licensing
 
-Jake Norbie, Norbie LLC
+Jake Norbie
