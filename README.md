@@ -33,6 +33,9 @@ All dependencies that were used by the owner are captured within the requirement
 2) To install dependences, in anaconda navigate to the directory and type:
 ```pip install --file requirements.txt```
 
+3) Set the PYTHONPATH to the current working directory. In powershell this is:
+```$env:PYTHONPATH = $pwd```
+
 ## Use Kaggle Dataset
 
 1) In order to download the Kaggle dataset you can either do so at `https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data` or by using the Kaggle API
