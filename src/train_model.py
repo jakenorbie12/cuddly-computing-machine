@@ -2,7 +2,10 @@ import pandas as pd
 import joblib
 import json
 
-from src.architectures.model_architectures import *
+from src.architectures.model_architectures import (
+    LinearRegressor,
+    BoostedHybrid
+)
 
 
 model_config_file = open('config/model_configs.json')
@@ -11,6 +14,8 @@ forecasting_model_preset = model_configs['forecasting-model']
 match forecasting_model_preset:
     case 'Linear Regression':
         time_series_forecasting_model = LinearRegressor()
+    case 'Boost Hybrid':
+        time_series_forecasting_model = BoostedHybrid()
     case _:
         time_series_forecasting_model = LinearRegressor()
 

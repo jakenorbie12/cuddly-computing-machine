@@ -1,4 +1,5 @@
 ipykernel
+darts
 kaggle
 numpy
 pandas

@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import joblib
 
-from src.architectures.model_architectures import *
 
 test_X = pd.read_csv('./data/processed/test_X.csv')
 test_ids = test_X[['id']]

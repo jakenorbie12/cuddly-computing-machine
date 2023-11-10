@@ -1,5 +1,15 @@
 # Kaggle Time Series Forecasting Software Package
 
+## TO-DO
+
+-Create LSTM model
+
+-Test various models and report metrics
+
+-Update README to clarify functionality
+
+-Convert to clean code
+
 ## Purpose
 
 This project is designed to serve three main purposes:
