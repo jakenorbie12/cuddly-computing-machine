@@ -1,3 +1,16 @@
 {
-    "forecasting-model": "Linear Regression"
+    "model-name": "model",
+    "forecasting-model": "Exponential Smoothing",
+    "Linear Regression": {
+        
+    },
+    "Boosted Hybrid": {
+        
+    },
+    "Exponential Smoothing": {
+        "seasonal_periods": "infer"
+    },
+    "LightGBM": {
+        "lags": 14
+    }
 }

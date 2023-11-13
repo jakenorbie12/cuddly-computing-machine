@@ -1,9 +1,6 @@
 {
     "feature-generator": "Custom",
     "custom-feature-generator": {
-        "index": true,
-        "family": true,
-        "store-number": true,
         "oil-price": true,
         "holidays-and-events": true,
         "day-of-week": true,

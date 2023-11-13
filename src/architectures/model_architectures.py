@@ -13,7 +13,7 @@ class Splitter():
     def __init__(self) -> None:
         pass
 
-    def split_data(data_X, data_Y):
+    def split_data(self, data_X, data_Y):
         data = pd.concat([data_X, data_Y], axis=1)
         data_subsets = {}
         subset_name_definer = "{family}-{store_number}"
@@ -29,27 +29,24 @@ class Splitter():
                 ]
                 data_subset_timeseries = TimeSeries.from_dataframe(
                     data_subset,
-                    time_col='time',
-                    static_covariates=data_subset.drop(
-                        ['family', 'store_nbr', 'time', 'sales']
-                    ),
+                    time_col='date',
                     value_cols='sales',
                     fill_missing_dates=True,
                     freq='D',
                 )
                 data_subsets[subset_definition] = fill_missing_values(
                     data_subset_timeseries
-                    )
+                )
         return data_subsets
 
-    def fit_split_data(model, split_data):
+    def fit_split_data(self, model, split_data):
         subset_models = {}
-        for subset, data in split_data.items():
-            subset_model = model.fit(split_data)
+        for subset, subset_data in split_data.items():
+            subset_model = model.fit(subset_data)
             subset_models[subset] = subset_model
         return subset_models
 
-    def forecast_split_data(split_models, split_X):
+    def forecast_split_data(self, split_models, split_X):
         Y = pd.DataFrame()
         for subset, X in split_X.items():
             y_pred = pd.DataFrame(
@@ -118,14 +115,20 @@ class BoostedHybrid():
 
 
 class ExponentialSmoothing():
-    def __init__(self) -> None:
-        self.model = ExponentialSmoothingModel()
+    def __init__(self, seasonal_periods="infer") -> None:
+        if seasonal_periods == "infer":
+            self.model = ExponentialSmoothingModel()
+        else:
+            self.model = ExponentialSmoothingModel(
+                seasonal_periods=seasonal_periods
+            )
         self.splitter = Splitter()
 
     def fit_data(self, X, Y) -> None:
         split_data = self.splitter.split_data(X, Y)
         self.split_models = self.splitter.fit_split_data(self.model,
-                                                         split_data)
+                                                         split_data,
+                                                         )
 
     def forecast_data(self, X):
         split_test_data = self.splitter.split_data(X, None)
@@ -139,11 +142,13 @@ class LightGBM():
 
     def __init__(self, lags=14) -> None:
         self.model = LightGBMModel(lags=lags)
+        self.splitter = Splitter()
 
     def fit_data(self, X, Y) -> None:
         split_data = self.splitter.split_data(X, Y)
         self.split_models = self.splitter.fit_split_data(self.model,
-                                                         split_data)
+                                                         split_data,
+                                                         )
 
     def forecast_data(self, X):
         split_test_data = self.splitter.split_data(X, None)

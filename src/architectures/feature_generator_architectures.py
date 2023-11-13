@@ -69,7 +69,7 @@ class FeaturesGenerator(ABC):
         self.train_df = self.dataloader.load_train_df()
         self.test_df = self.dataloader.load_test_df()
 
-        data_splitting_models = ['Exponential-Smoothing', 'lightGBM']
+        data_splitting_models = ['Exponential Smoothing', 'LightGBM']
         model_configs_dir = Path('./config/model_configs.json')
         with open(model_configs_dir, 'r') as fp:
             forecasting_model = json.load(fp)['forecasting-model']
@@ -83,7 +83,8 @@ class FeaturesGenerator(ABC):
         pass
 
     def add_feature_time(self, df) -> pd.DataFrame:
-        df['time'] = (df['date'] - min(df['date'])).dt.days
+        if not self.needs_data_splitting:
+            df['time'] = (df['date'] - min(df['date'])).dt.days
         return df
 
     def add_feature_family(self, df) -> pd.DataFrame:
@@ -154,11 +155,9 @@ class FeaturesGenerator(ABC):
         return df
 
     def drop_unneeded_columns(self, df):
-        return df.drop(columns=[
-            'date',
-            'store_nbr',
-            'family',
-        ])
+        if not self.needs_data_splitting:
+            df = df.drop(columns=['date', 'store_nbr', 'family'])
+        return df
 
     def return_training_data(self, train_df):
         X = train_df.drop(columns=['id', 'sales'])
@@ -244,12 +243,9 @@ class CustomFeaturesGenerator(FeaturesGenerator):
             self.features_configs = json.load(fp)['custom-feature-generator']
 
     def preprocessing_pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
-        if self.features_configs['index']:
-            df = self.add_feature_time(df)
-        if self.features_configs['family']:
-            df = self.add_feature_family(df)
-        if self.features_configs['store-number']:
-            df = self.add_feature_store_number(df)
+        df = self.add_feature_time(df)
+        df = self.add_feature_family(df)
+        df = self.add_feature_store_number(df)
         if self.features_configs['oil-price']:
             self.oil_df = self.dataloader.load_oil_df()
             df = self.add_feature_oil_price(df, self.oil_df)

@@ -1,18 +1,8 @@
 # Kaggle Time Series Forecasting Software Package
 
-## TO-DO
-
--Create LSTM model
-
--Test various models and report metrics
-
--Update README to clarify functionality
-
--Convert to clean code
-
 ## Purpose
 
-This project is designed to serve three main purposes:
+The Store Sales Time Series Forecasting project is used as a baseline by Kaggle to introduce programmers into time series data. In this project, we will use this dataset to perform three objectives:
 
 1. Showcase the basics of feature generation and extraction within the dataset archetype of time series
 2. Create a framework for creating, training, and evaluating models using base or featured time series dataset from Kaggle Store Sales Time Series Forecasting
@@ -64,9 +54,18 @@ All dependencies that were used by the owner are captured within the requirement
 
 Firstly, the research uses a common format of Jupyter Notebooks. Since this was used in VSCode, you will need to go to the Command Palette (Ctrl + Shift + P) and create a python environment. This project uses a venv and uses the requirements.txt file to import all necessary imports.
 
+You can view all research performed for feature extraction/EDA in the 'research' folder of the project. This also holds a small amount of research performed on some models to test their viability.
+
 ## Software
 
-Currently there is no usage, other than to view the research work into time series. Be on the lookout for a deployable package update!
+### Configurations
+
+Before running the software, you may want to change some hyperparameters and settings. All settings can be changed within the 'config' folder. Currently the 'data_configs.json' file regards all settings involved in the feature generation stage, while 'model_configs.json' regards all settings and hyperparameters involved in the model generation and usage.
+
+### Running
+
+To run the entire process of feature generation, model training, and model forecasting, use this command to run the shell script file:
+```./run.sh```
 
 ## Troubleshooting
 
